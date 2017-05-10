@@ -6,7 +6,7 @@ class ModelExtensionTotalCredit extends Model {
 		$balance = $this->customer->getBalance();
 
 		if ((float)$balance) {
-			$credit = min($balance, $total['total']);
+			$credit = min($balance, $total);
 
 			if ($credit > 0) {
 				$total['totals'][] = array(

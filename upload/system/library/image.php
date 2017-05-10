@@ -8,10 +8,6 @@ class Image {
 	private $mime;
 
 	public function __construct($file) {
-		if (!extension_loaded('gd')) {
-			exit('Error: PHP GD is not installed!');
-		}
-		
 		if (file_exists($file)) {
 			$this->file = $file;
 

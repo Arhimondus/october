@@ -77,15 +77,7 @@ $(document).ready(function() {
 			$('#menu > li > ul').removeClass('in collapse');
 			$('#menu > li > ul').removeAttr('style');
 		} else {
-			if (typeof localStorage === 'object') {
-				try {
-					localStorage.setItem('column-left', 'active');
-				} catch (e) {
-					Storage.prototype._setItem = Storage.prototype.setItem;
-					Storage.prototype.setItem = function() {};
-					alert('Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some settings may not save or some features may not work properly for you.');
-				}
-			}
+			localStorage.setItem('column-left', 'active');
 
 			$('#button-menu i').replaceWith('<i class="fa fa-dedent fa-lg"></i>');
 

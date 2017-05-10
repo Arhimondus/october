@@ -9,6 +9,7 @@ class Cart {
 		$this->session = $registry->get('session');
 		$this->db = $registry->get('db');
 		$this->tax = $registry->get('tax');
+		$this->currency = $registry->get('currency');
 		$this->weight = $registry->get('weight');
 
 		// Remove all the expired carts with no customer ID
@@ -248,8 +249,10 @@ class Cart {
 					'minimum'         => $product_query->row['minimum'],
 					'subtract'        => $product_query->row['subtract'],
 					'stock'           => $stock,
-					'price'           => ($price + $option_price),
-					'total'           => ($price + $option_price) * $cart['quantity'],
+					/*'price'           => ($price + $option_price),
+					'total'           => ($price + $option_price) * $cart['quantity'],*/
+					'price'           => $this->currency->format($this->tax->calculate($price, $product_query->row['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
+					'total'           => $this->currency->format($this->tax->calculate($price, $product_query->row['tax_class_id'], $this->config->get('config_tax')) * $cart['quantity'], $this->session->data['currency']),
 					'reward'          => $reward * $cart['quantity'],
 					'points'          => ($product_query->row['points'] ? ($product_query->row['points'] + $option_points) * $cart['quantity'] : 0),
 					'tax_class_id'    => $product_query->row['tax_class_id'],
@@ -267,6 +270,14 @@ class Cart {
 		}
 
 		return $product_data;
+	}
+
+	public function computeTotal($products) {
+		$total = 0;
+		foreach($products as $product) {
+			$total += $product['total'];
+		}
+		return $total;
 	}
 
 	public function add($product_id, $quantity = 1, $option = array(), $recurring_id = 0) {

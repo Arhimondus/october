@@ -3,7 +3,6 @@
 $_['heading_title']    = 'Citylink';
 
 // Text
-$_['text_extension']   = 'Extensions';
 $_['text_shipping']    = 'Shipping';
 $_['text_success']     = 'Success: You have modified Citylink shipping!';
 $_['text_edit']        = 'Edit Citylink Shipping';

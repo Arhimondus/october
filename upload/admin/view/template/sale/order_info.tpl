@@ -129,18 +129,12 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <td style="width: 50%;" class="text-left"><?php echo $text_payment_address; ?></td>
-              <?php if ($shipping_method) { ?>
               <td style="width: 50%;" class="text-left"><?php echo $text_shipping_address; ?></td>
-              <?php } ?>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-left"><?php echo $payment_address; ?></td>
-              <?php if ($shipping_method) { ?>
               <td class="text-left"><?php echo $shipping_address; ?></td>
-              <?php } ?>
             </tr>
           </tbody>
         </table>
@@ -651,6 +645,6 @@ $(document).ready(function() {
 $('select[name="order_status_id"]').change(function(){
 	changeStatus();
 });
-//--></script> 
+//--></script>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

@@ -39,8 +39,6 @@
   <?php } ?>
   <?php } ?>
   <input type="hidden" name="comment" value="">
-  <?php } else { ?>
-  <?php echo $text_no_shipping; ?>
   <?php } ?>
 </div>
 <?php } ?>

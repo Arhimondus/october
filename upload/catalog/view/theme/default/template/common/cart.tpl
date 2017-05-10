@@ -39,9 +39,9 @@
     <li>
       <div>
         <table class="table table-bordered">
-          <?php foreach ($totals as $total) { ?>
+          <?php foreach($totals as $total) { ?>
           <tr>
-            <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
+            <td colspan="3" class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
             <td class="text-right"><?php echo $total['text']; ?></td>
           </tr>
           <?php } ?>

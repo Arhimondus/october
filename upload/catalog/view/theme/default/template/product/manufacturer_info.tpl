@@ -73,9 +73,9 @@
                   <?php } else { ?>
                   <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
                   <?php } ?>
-                  <?php if ($product['tax']) { ?>
-                  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                  <?php } ?>
+                  <?php /*if ($product['tax']) {*/ ?>
+                  <!--<span class="price-tax"><?php /*echo $text_tax;*/ ?> <?php /*echo $product['tax'];*/ ?></span>-->
+                  <?php /*}*/ ?>
                 </p>
                 <?php } ?>
                 <?php if ($product['rating']) { ?>

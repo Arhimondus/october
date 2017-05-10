@@ -422,7 +422,10 @@ class ControllerExtensionModification extends Controller {
 			// Maintance mode back to original settings
 			$this->model_setting_setting->editSettingValue('config', 'config_maintenance', $maintenance);
 
-			$this->session->data['success'] = $this->language->get('text_success');
+			// Do not return success message if refresh() was called with $data
+			if (!empty($data['redirect'])) {
+				$this->session->data['success'] = $this->language->get('text_success');
+			}
 
 			$url = '';
 

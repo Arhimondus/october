@@ -89,7 +89,7 @@ class ControllerExtensionDashboardCustomer extends Controller {
 	}
 
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', 'extension/dashboard/customer')) {
+		if (!$this->user->hasPermission('modify', 'extension/analytics/google_analytics')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 

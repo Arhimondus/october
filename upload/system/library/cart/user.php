@@ -2,7 +2,6 @@
 namespace Cart;
 class User {
 	private $user_id;
-	private $user_group_id;
 	private $username;
 	private $permission = array();
 

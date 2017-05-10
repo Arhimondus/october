@@ -42,11 +42,11 @@ class ControllerExtensionTotalShipping extends Controller {
 				$data['postcode'] = '';
 			}
 
-			if (isset($this->session->data['shipping_method'])) {
+			/*if (isset($this->session->data['shipping_method'])) {
 				$data['shipping_method'] = $this->session->data['shipping_method']['code'];
 			} else {
 				$data['shipping_method'] = '';
-			}
+			}*/
 
 			return $this->load->view('extension/total/shipping', $data);
 		}
